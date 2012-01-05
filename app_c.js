@@ -23,7 +23,7 @@ if (cluster.isMaster) {
   http.Server(function(req, res) {
       console.log('%s - %s', req.method, req.url);
       
-      var _is_fb = check(req.url);
+      var _is_fb = isFB(req.url);
       
       res.writeHead(200);
       res.end("hello world node! .... " + _is_fb + "\n");
@@ -33,12 +33,8 @@ if (cluster.isMaster) {
 
 
 
-function check(req_url) {
-    var re = new RegExp(/^fb/);
-    var m = re.exec(req_url);
-    var _return = false;
-    if (m != null) {
-        _return = true;
-    }
+function isFB(req_url) {
+    var re = /fb/g;
+    var _return = re.test(req_url);
     return _return;
 }
