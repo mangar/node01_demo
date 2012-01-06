@@ -1,14 +1,23 @@
 A Simple test with Node.js
 ------------------------------------
 
+1 - Testing Features:
 
-1 - Modules
+- basic app
+- cluster
+- redis
+
+
+
+
+2 - Modules
 -----------
 - cluster
 - supervisor
 - underscore 
 	- http://documentcloud.github.com/underscore/
-
+- request
+	- https://github.com/mikeal/request
 
 
 
